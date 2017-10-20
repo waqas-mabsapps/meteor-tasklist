@@ -10,10 +10,12 @@
 </body>
 
 <template name="tasks">
+
     <div align="right">{{> loginButtons }}
     </div>
     {{#if currentUser }}
-    <h1>Add Task</h1>
+<h1>Add Task</h1>
+
     <form class="add-task">
         <input type="text" name="name" placeholder="Task Name" />
         <input type="submit" value="Submit" />
@@ -23,6 +25,7 @@
     {{/if}}
     <hr/>
     <h3>Task List</h3>
+
     <ul>
   {{#each tasks}}
     <li>{{ name }}{{#if currentUser}}<a href="#" class="delete-task">X</a>{{/if}}</li>
