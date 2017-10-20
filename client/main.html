@@ -3,17 +3,31 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  {{> tasks }}
 
-  {{> hello}}
-  {{> info}}
+   <!-- {{> info }}-->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="tasks">
+
+    <h1>Add Task</h1>
+    <form class="add-task">
+        <input type="text" name="name" placeholder="Task Name" />
+        <input type="submit" value="Submit" />
+    </form>
+    <hr/>
+    <h3>Task List</h3>
+    <ul>
+  {{#each tasks}}
+    <li>{{ name }}</li>
+  {{/each}}
+  </ul>
 </template>
 
+
+
+
+<!--
 <template name="info">
   <h2>Learn Meteor!</h2>
   <ul>
@@ -23,3 +37,4 @@
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
 </template>
+-->
