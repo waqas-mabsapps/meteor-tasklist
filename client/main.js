@@ -22,5 +22,11 @@ Template.tasks.events({
 
         event.target.name.value = '';
         return false;
+    },
+    "click .delete-task" : function (event) {
+        if(confirm('Delete Task?')){
+            Tasks.remove(this._id);
+        }
+        return false;
     }
 });
