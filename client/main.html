@@ -1,0 +1,42 @@
+<head>
+  <title>tasklist</title>
+</head>
+
+<body>
+  {{> tasks }}
+
+   <!-- {{> info }}-->
+</body>
+
+<template name="tasks">
+
+    <h2>Basic Task List Demo using Meteor</h2><hr/>
+
+
+    <h4>Add Task</h4>
+    <form class="add-task">
+        <input type="text" name="name" placeholder="Task Name" />
+        <input type="submit" value="Submit" />
+    </form>
+    <h4>Task List</h4>
+    <ul>
+  {{#each tasks}}
+    <li>{{ name }} <a href="#" class="delete-task">X</a></li>
+  {{/each}}
+  </ul>
+</template>
+
+
+
+
+<!--
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
+-->
