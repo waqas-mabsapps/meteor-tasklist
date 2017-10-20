@@ -3,6 +3,7 @@
 </head>
 
 <body>
+<center><h2>Meteor Basic Task List Example with Authetication</h2></center><hr/>
   {{> tasks }}
 
    <!-- {{> info }}-->
@@ -10,18 +11,24 @@
 
 <template name="tasks">
 
-    <h2>Basic Task List Demo using Meteor</h2><hr/>
+    <div align="right">{{> loginButtons }}
+    </div>
+    {{#if currentUser }}
+<h1>Add Task</h1>
 
-
-    <h4>Add Task</h4>
     <form class="add-task">
         <input type="text" name="name" placeholder="Task Name" />
         <input type="submit" value="Submit" />
     </form>
-    <h4>Task List</h4>
+    {{else}}
+        <p>Please login first to add tasks; If you don't have an account Please register.</p>
+    {{/if}}
+    <hr/>
+    <h3>Task List</h3>
+
     <ul>
   {{#each tasks}}
-    <li>{{ name }} <a href="#" class="delete-task">X</a></li>
+    <li>{{ name }}{{#if currentUser}}<a href="#" class="delete-task">X</a>{{/if}}</li>
   {{/each}}
   </ul>
 </template>
