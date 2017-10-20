@@ -10,13 +10,15 @@
 
 <template name="tasks">
 
-    <h1>Add Task</h1>
+    <h2>Basic Task List Demo using Meteor</h2><hr/>
+
+
+    <h4>Add Task</h4>
     <form class="add-task">
         <input type="text" name="name" placeholder="Task Name" />
         <input type="submit" value="Submit" />
     </form>
-    <hr/>
-    <h3>Task List</h3>
+    <h4>Task List</h4>
     <ul>
   {{#each tasks}}
     <li>{{ name }} <a href="#" class="delete-task">X</a></li>
